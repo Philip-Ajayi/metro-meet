@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+/* Custom theme for Tailwind 4.2 */
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Clash Display', 'Inter', sans-serif; /* Optional custom font */
+  --color-metro-blue: #1e3a8a;
+  --color-metro-gold: #f59e0b;
+  --color-metro-dark: #0f172a;
+  --color-metro-light: #f8fafc;
+}
+
+/* Custom keyframes for gradient animation */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@layer utilities {
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 6s ease infinite;
+  }
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  .text-glow {
+    text-shadow: 0 0 10px currentColor;
+  }
+  .bg-glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+::-webkit-scrollbar-thumb {
+  background: #f59e0b;
+  border-radius: 4px;
+}
+
+body {
+  cursor: none; /* hide default cursor for custom cursor effect */
+}
