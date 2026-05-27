@@ -21,8 +21,9 @@ export async function POST(request: Request) {
     let emailError = null;
 
     try {
-      const emailData = await resend.emails.send({
-        from: 'Metro Meet Contact Form <noreply@resend.dev>', // In production, replace with verified domain
+      // Replace lines 49-53 with this:
+      const { data: emailData, error: sendError } = await resend.emails.send({
+        from: 'Metro Meet Contact Form <noreply@resend.dev>', 
         to: ['ajayiphilipg@gmail.com'],
         subject: `📩 New Metro Meet Inquiry: ${subject || 'General Inquiry'}`,
         html: `
@@ -49,7 +50,11 @@ export async function POST(request: Request) {
           </div>
         `
       });
-      emailSent = !!emailData.id;
+      if (sendError) {
+        emailError = sendError.message;
+      } else {
+        emailSent = !!emailData?.id;
+      }
     } catch (err: any) {
       emailError = err.message || err;
       console.error('Error forwarding contact message via Resend:', err);

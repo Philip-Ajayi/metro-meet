@@ -46,7 +46,7 @@ export async function POST(request: Request) {
     let emailError = null;
 
     try {
-      const emailData = await resend.emails.send({
+      const { data: emailData, error: sendError } = await resend.emails.send({
         from: 'Metro Meet <noreply@resend.dev>', // In production, replace with verified domain e.g., info@metromeet.org
         to: [email],
         subject: '🎉 Metro Meet 4.0 Registration Confirmed – Money Matters!',
@@ -96,7 +96,11 @@ export async function POST(request: Request) {
           </div>
         `
       });
-      emailSent = !!emailData.id;
+      if (sendError) {
+        emailError = sendError.message;
+      } else {
+        emailSent = !!emailData?.id;
+      }
     } catch (err: any) {
       emailError = err.message || err;
       console.error('Error sending registration email via Resend:', err);
