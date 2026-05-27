@@ -110,7 +110,7 @@ export default function Hero() {
           className="relative w-40 h-16 md:w-56 md:h-24 mb-6 flex items-center justify-center"
         >
           <Image
-            src="/metroMeetLogo/darkBackground"
+            src="/metroMeetLogo/darkBackground.png"
             alt="Metro Meet Logo"
             fill
             className="object-contain filter drop-shadow-[0_0_15px_rgba(245,158,11,0.2)]"
