@@ -23,7 +23,7 @@ export async function POST(request: Request) {
     try {
       // Replace lines 49-53 with this:
       const { data: emailData, error: sendError } = await resend.emails.send({
-        from: 'Metro Meet Contact Form <noreply@resend.dev>', 
+        from: 'Metro Meet Contact Form <contact@mivwordhouse.com>', 
         to: ['ajayiphilipg@gmail.com'],
         subject: `📩 New Metro Meet Inquiry: ${subject || 'General Inquiry'}`,
         html: `
