@@ -47,7 +47,7 @@ export async function POST(request: Request) {
 
     try {
       const { data: emailData, error: sendError } = await resend.emails.send({
-        from: 'Metro Meet <noreply@resend.dev>', // In production, replace with verified domain e.g., info@metromeet.org
+        from: 'Metro Meet <contact@mivwordhouse.com>', // In production, replace with verified domain e.g., info@metromeet.org
         to: [email],
         subject: '🎉 Metro Meet 4.0 Registration Confirmed – Money Matters!',
         html: `
