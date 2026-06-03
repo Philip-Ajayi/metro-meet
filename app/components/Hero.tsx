@@ -12,7 +12,7 @@ export default function Hero() {
   useEffect(() => {
     setMounted(true);
     // Target Date: Saturday 13th of June 2026, 10:00 AM
-    const targetDate = new Date('2026-06-13T10:00:00').getTime();
+    const targetDate = new Date('2026-06-13T13:00:00').getTime();
 
     const calculateTimeLeft = () => {
       const difference = targetDate - new Date().getTime();
@@ -214,7 +214,7 @@ export default function Hero() {
             </div>
             <div className="text-left">
               <p className="text-xs text-slate-400 uppercase font-bold tracking-wider">Time</p>
-              <p className="text-sm font-semibold text-white">10:00 AM Prompt</p>
+              <p className="text-sm font-semibold text-white">1:00 PM Prompt</p>
             </div>
           </div>
 
