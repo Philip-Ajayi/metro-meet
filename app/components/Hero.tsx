@@ -265,7 +265,7 @@ export default function Hero() {
               </button>
               <div className="relative aspect-square w-full">
                 <Image
-                  src="/flyer/flyer.jpeg"
+                  src="/flyer/IMG-20260531-WA0000.jpg"
                   alt="Metro Meet 4.0 Flyer"
                   fill
                   className="object-contain rounded-2xl"
