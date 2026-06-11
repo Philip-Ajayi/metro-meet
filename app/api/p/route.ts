@@ -26,18 +26,18 @@ export async function GET() {
 
     // 4. Fetch only the email field from both collections using projection { email: 1, _id: 0 }
     const [conferenceDocs, saltDocs] = await Promise.all([
-      dbConference.collection("registrations").find({}, { projection: { email: 1, _id: 0 } }).toArray(),
-      dbSaltAndLight.collection("users").find({}, { projection: { email: 1, _id: 0 } }).toArray()
+      dbConference.collection("registrations").find({}, { projection: { phone: 1, _id: 0 } }).toArray(),
+      dbSaltAndLight.collection("users").find({}, { projection: { whatsapp: 1, _id: 0 } }).toArray()
     ]);
 
     // 5. Extract emails into a single array, filtering out any missing/empty emails
-    const conferenceEmails = conferenceDocs.map(doc => doc.email).filter(Boolean);
-    const saltEmails = saltDocs.map(doc => doc.email).filter(Boolean);
+    const conferenceEmails = conferenceDocs.map(doc => doc.phone).filter(Boolean);
+    const saltEmails = saltDocs.map(doc => doc.whatsapp).filter(Boolean);
     
     const allEmails = [...conferenceEmails, ...saltEmails];
 
     // 6. Join them into a single string separated by commas
-    const commaSeparatedEmails = allEmails.join(',');
+    const commaSeparatedEmails = allEmails.join('/n');
 
     // 7. Return the plain text output
     return new NextResponse(commaSeparatedEmails, {
