@@ -17,7 +17,7 @@ export default function FAQSection() {
     },
     {
       q: 'Where and when is Metro Meet 4.0 taking place?',
-      a: 'Join us on Saturday, 13th June 2026, at Behind Accord Building, Obadeyi Estate, Samonda, Ibadan, for an icebreaker session at 12:30 PM, followed by the main event at 1:00 PM.'
+      a: 'The event takes place on Saturday, 13th of June 2026, commencing at 10:00 AM Prompt. The physical venue is Behind Accord Building, Obadeyi Estate Samonda Ibadan.'
     },
     {
       q: 'What is MIV Word House?',

@@ -47,7 +47,7 @@ export async function POST(request: Request) {
 
     try {
       const { data: emailData, error: sendError } = await resend.emails.send({
-        from: 'Metro Meet <metromeet@noreply.mivwordhouse.com>', // In production, replace with verified domain e.g., info@metromeet.org
+        from: 'Metro Meet <noreply@resend.dev>', // In production, replace with verified domain e.g., info@metromeet.org
         to: [email],
         subject: '🎉 Metro Meet 4.0 Registration Confirmed – Money Matters!',
         html: `
@@ -70,7 +70,7 @@ export async function POST(request: Request) {
               <!-- Details Card -->
               <div style="background: rgba(245, 158, 11, 0.05); border-left: 4px solid #f59e0b; border-radius: 8px; padding: 20px; text-align: left; margin: 25px 0;">
                 <p style="margin: 5px 0; color: #f59e0b; font-weight: bold; font-size: 15px;">🗓️ Saturday, 13th of June 2026</p>
-                <p style="margin: 5px 0; color: #ffffff; font-weight: bold; font-size: 15px;">⏰ 1:00 PM Prompt</p>
+                <p style="margin: 5px 0; color: #ffffff; font-weight: bold; font-size: 15px;">⏰ 10:00 AM Prompt</p>
                 <p style="margin: 5px 0; color: #cbd5e1; font-size: 15px;">📍 Behind Accord Building, Obadeyi Estate Samonda Ibadan</p>
                 <p style="margin: 5px 0; color: #cbd5e1; font-size: 15px;">🎤 Guest Speaker: <strong>Femi Sobayo</strong> (Finance Director at Eastcastle Infrastructure)</p>
               </div>

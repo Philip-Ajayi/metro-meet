@@ -7,6 +7,7 @@ export interface IRegistration extends Document {
   address: string; // city
   whatsapp: string;
   email: string;
+  attended: boolean;
   createdAt: Date;
 }
 
@@ -42,6 +43,10 @@ const RegistrationSchema = new Schema<IRegistration>({
     trim: true,
     lowercase: true,
     match: [/^\S+@\S+\.\S+$/, 'Please use a valid email address'],
+  },
+  attended: {
+    type: Boolean,
+    default: false,
   },
   createdAt: {
     type: Date,
