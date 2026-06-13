@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Star, Send, Loader2, CheckCircle2, AlertCircle, ArrowLeft, MessageSquare } from 'lucide-react';
+import { motion } from 'framer-motion';
 import AnimatedBackground from '../components/AnimatedBackground';
 
 export default function SubmitFeedbackPage() {
